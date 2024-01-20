@@ -1,0 +1,48 @@
+import java.util.Scanner;
+public class 
+{
+    public static void main(String[] args)
+    {
+        double inpRadius;
+        // create a circle object with no arg constructor
+        Circle cir1 = new Circle();
+        // create a circle object with one arg constructor
+        Circle cir2 = new Circle(10);
+
+        // print out the area of the circles
+        System.out.format("Circle 1 has radius %f%n and area %f%n",
+                cir1.getRadius(), cir1.GetArea());
+        System.out.format("Circle 2 has radius %f%n and area %f%n",
+                cir2.getRadius(), cir2.GetArea());
+
+        //prompt the user for a radius
+        Scanner input = new Scanner(System.in);
+        do
+        {
+            System.out.println("Enter a positive radius => ");
+            inpRadius = input.nextDouble();
+        } while (inpRadius < 0);
+        cir1.setRadius(inpRadius);
+
+        // print out the area of the circles
+        System.out.format("Circle 1 has radius %f%n and area %f%n",
+                cir1.getRadius(), cir1.GetArea());
+        System.out.format("Circle 2 has radius %f%n and area %f%n",
+                cir2.getRadius(), cir2.GetArea());
+
+        //add circles
+
+        if(cir1.isGreater(cir2)){
+        System.out.format("Circle 1, with radius %f%n is bigger the Circle 2 with radius %f%n", cir1.getRadius(), cir2.getRadius());
+         }
+        else{
+        System.out.format("Circle 1, with radius %f%n is not bigger the Circle 2 with radius %f%n", cir1.getRadius(), cir2.getRadius());
+        }
+
+
+
+        input.next();
+        input.close();
+    
+}
+}
